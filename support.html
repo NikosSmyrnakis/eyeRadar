@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EyeRadar – Support</title>
+  <meta name="description" content="Support page for the EyeRadar iOS research utility app.">
+  <style>
+    :root { --bg:#0f1115; --card:#151821; --text:#e9eef3; --muted:#aab3be; --accent:#4da3ff; --ok:#30d158; --warn:#ffd60a; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    header, main, footer { max-width: 880px; margin: 0 auto; padding: 20px; }
+    header { padding-top: 36px; }
+    .card { background: var(--card); border-radius: 16px; padding: 20px; margin: 16px 0; box-shadow: 0 4px 24px rgba(0,0,0,.25); }
+    h1 { font-size: 2rem; margin: 0 0 8px; }
+    h2 { font-size: 1.25rem; margin-top: 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    ul { padding-left: 1rem; }
+    .tag { display:inline-block; padding:2px 8px; border-radius:999px; background:#0b1220; color:var(--muted); border:1px solid #273044; font-size:.8rem; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:12px; }
+    .small { color: var(--muted); font-size: .95rem; }
+    footer { padding-bottom: 48px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EyeRadar — Support</h1>
+    <p class="small">A research utility to capture eye‑tracking information while reading.</p>
+    <span class="tag">iOS Utility • ARKit/TrueDepth • Research</span>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Get Help</h2>
+      <p>If you need support, contact us at <a href="mailto:REPLACE_WITH_YOUR_EMAIL">REPLACE_WITH_YOUR_EMAIL</a> or open an issue on GitHub: <a href="https://github.com/REPLACE_WITH_USERNAME/REPLACE_WITH_REPO/issues" target="_blank" rel="noopener">Issue Tracker</a>.</p>
+      <p class="small">Response times may vary. Please include your app version (see <em>Settings → About</em> in the app) when you contact us.</p>
+    </section>
+
+    <section class="card">
+      <h2>Requirements</h2>
+      <ul>
+        <li>iPhone with TrueDepth front camera (Face ID models).</li>
+        <li>iOS 18 or later.</li>
+        <li>Sign in with Apple for authentication.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>How to Use EyeRadar</h2>
+      <ol>
+        <li><strong>Sign in with Apple</strong> when prompted.</li>
+        <li>Choose a text from the list and follow the on‑screen instructions to begin a reading session.</li>
+        <li>Complete the brief AR calibration when requested to enable accurate eye tracking.</li>
+        <li>After finishing, go to the <strong>Explorer</strong> tab to view your sessions.</li>
+        <li>Select one or more sessions and use <strong>Share</strong> to export ZIP files via the iOS share sheet.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Troubleshooting</h2>
+      <div class="grid">
+        <div>
+          <p><strong>Camera/AR not starting</strong><br>
+          Ensure camera permission is granted in <span class="mono">Settings → Privacy &amp; Security → Camera</span>.</p>
+        </div>
+        <div>
+          <p><strong>Face not detected</strong><br>
+          Use a well‑lit environment and keep the device about arm’s length from your face.</p>
+        </div>
+        <div>
+          <p><strong>Share not showing apps</strong><br>
+          Save to Files first, then attach the ZIP from Files to your preferred app.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Data &amp; Privacy</h2>
+      <p>EyeRadar stores reading sessions on your device. Exporting/sharing is initiated by you. For details, see our <a href="https://REPLACE_WITH_USERNAME.github.io/REPLACE_WITH_REPO/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Release Notes &amp; Roadmap</h2>
+      <ul>
+        <li><strong>1.0</strong> — Initial release with reading session capture, AR calibration, and ZIP export.</li>
+      </ul>
+      <p class="small">Planned: additional text sets, configurable session parameters, export formats.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 REPLACE_WITH_OWNER_NAME. All rights reserved.</p>
+  </footer>
+</body>
+</html>
