@@ -102,15 +102,14 @@
 
     <!-- ======= Data Collection ======= -->
     <section id="data-collection" class="card">
-      <h2>Data Collection</h2>
+      <h2>Data Collection (only locally, nothing is shared automatically)</h2>
       <ul>
         <li><strong>User Information</strong>: Name, grade, ID, email, and date of birth (only if you enter them).</li>
         <li><strong>Authentication</strong>: <em>Sign in with Apple</em>. Apple may provide your name and/or relay email depending on your choice.</li>
-        <li><strong>Reading Sessions</strong> (saved only when you choose):
+        <li><strong>Reading Sessions</strong>
           <ul>
-            <li>Derived gaze samples (screen coordinates), fixation/saccade metrics, timestamps</li>
+            <li>Gaze vectors, lookAtPoint , timestamps</li>
             <li>Optional calibration parameters</li>
-            <li>Local device and app version metadata for troubleshooting (e.g., model, iOS version)</li>
           </ul>
         </li>
       </ul>
@@ -170,7 +169,6 @@
     <section class="card">
       <h2>Your Choices &amp; Rights</h2>
       <ul>
-        <li><strong>Save or don’t save</strong>: You decide whether a session is stored.</li>
         <li><strong>Export</strong>: You choose when and how to share exported files.</li>
         <li><strong>Delete</strong>: Delete sessions in-app or uninstall the app to remove all locally stored data.</li>
         <li><strong>Questions</strong>: Contact <a href="mailto:nick8smirn@gmail.com">nick8smirn@gmail.com</a>.</li>
@@ -203,7 +201,6 @@
           <ul>
             <li><span class="badge ok">On-device</span> Gaze vectors, <code>lookAtPoint</code>, eye transforms, blink openness</li>
             <li><span class="badge ok">Not saved</span> Camera frames, depth maps, full face mesh</li>
-            <li><span class="badge warn">Saved if chosen</span> Derived gaze samples, fixation/saccade metrics, calibration params</li>
           </ul>
         </div>
       </div>
