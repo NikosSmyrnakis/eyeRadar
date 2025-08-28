@@ -6,64 +6,209 @@
   <title>EyeRadar – Privacy Policy</title>
   <meta name="description" content="Privacy Policy for the EyeRadar iOS research utility app.">
   <style>
-    :root { --bg:#0f1115; --card:#151821; --text:#e9eef3; --muted:#aab3be; --accent:#4da3ff; }
-    body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    :root { --bg:#0f1115; --card:#151821; --text:#e9eef3; --muted:#aab3be; --accent:#4da3ff; --ok:#46d19e; --warn:#ffd166; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Inter,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
     header, main, footer { max-width: 880px; margin: 0 auto; padding: 20px; }
     header { padding-top: 36px; }
     .card { background: var(--card); border-radius: 16px; padding: 20px; margin: 16px 0; box-shadow: 0 4px 24px rgba(0,0,0,.25); }
     h1 { font-size: 2rem; margin: 0 0 8px; }
     h2 { font-size: 1.25rem; margin-top: 0; }
+    h3 { font-size: 1.05rem; margin: 1rem 0 .5rem; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .small { color: var(--muted); font-size: .95rem; }
     footer { padding-bottom: 48px; color: var(--muted); }
+    ul { margin: .5rem 0 0 1.25rem; }
+    .pill { display:inline-block; font-size:.85rem; padding:.2rem .5rem; border-radius:999px; background:#0e3a67; color:#cfe6ff; }
+    .qa dt { font-weight:600; margin-top:.75rem; }
+    .qa dd { margin: .25rem 0 .75rem 0; color:var(--muted); }
+    blockquote { margin: .5rem 0; padding: .75rem 1rem; background:#0f141f; border-left: 4px solid var(--accent); border-radius: 8px; }
+    code { background:#0e1320; padding:.15rem .35rem; border-radius:6px; }
+    .grid { display:grid; grid-template-columns: 1fr; gap:12px; }
+    @media (min-width:720px){ .grid { grid-template-columns: 1fr 1fr; } }
+    .kvd { display:grid; grid-template-columns: 180px 1fr; gap:.5rem .75rem; }
+    .kvd div:first-child { color:var(--muted); }
+    .badge { font-size:.8rem; padding:.15rem .45rem; border-radius:6px; }
+    .ok { background:rgba(70,209,158,.15); color:var(--ok); }
+    .warn { background:rgba(255,209,102,.15); color:var(--warn); }
   </style>
 </head>
 <body>
   <header>
     <h1>Privacy Policy</h1>
-    <p class="small">Effective date: August 2025</p>
+    <p class="small">Effective date: August 2025 • App: <strong>EyeRadar</strong></p>
+    <p class="small">Contact: <a href="mailto:nick8smirn@gmail.com">nick8smirn@gmail.com</a></p>
   </header>
 
   <main>
-    <section class="card">
-      <h2>Introduction</h2>
-      <p>EyeRadar is a research utility app that captures eye-tracking data during reading sessions. This policy explains what data we collect, how we use it, and your choices.</p>
+    <!-- ======= App Review Face Data Summary (Answers Apple's questions) ======= -->
+    <section id="app-review-summary" class="card">
+      <h2>Face Data (TrueDepth/ARKit) – App Review Summary</h2>
+      <div class="qa">
+        <dt>What face data does the app collect?</dt>
+        <dd>
+          EyeRadar uses ARKit on supported iPhone devices to access <em>eye-tracking–related</em> signals during a session:
+          <ul>
+            <li><strong>Gaze vectors &amp; lookAtPoint</strong> (derived from ARKit face anchors)</li>
+            <li><strong>Eye transforms</strong> (left/right eye pose matrices) and <strong>blink openness</strong> estimates</li>
+            <li><strong>Timestamp &amp; session metadata</strong> (frame time, device model, iOS version)</li>
+          </ul>
+          <span class="badge ok">Not collected / not stored</span> Raw RGB camera frames, depth maps, and full face geometry/mesh are <strong>not saved</strong> or transmitted.
+        </dd>
+
+        <dt>Planned uses of the collected face data</dt>
+        <dd>
+          Collected signals are used <strong>solely</strong> to enable gaze-based reading research features:
+          <ul>
+            <li>Place a moving dot/selector and log where the user looks on the text</li>
+            <li>Compute reading metrics (e.g., fixation counts, dwell time, saccade jumps)</li>
+            <li>Local on-device UI adaptation (e.g., optional calibration)</li>
+          </ul>
+          <span class="badge ok">Never</span> used for user identification, authentication, advertising, or profiling.
+        </dd>
+
+        <dt>Will face data be shared with third parties? Where is it stored?</dt>
+        <dd>
+          <strong>No automatic sharing.</strong> Data remain <strong>on device storage</strong> by default. Sharing can occur only if you explicitly export via the iOS share sheet (e.g., Mail, Files, AirDrop). We do not run any non-Apple backend servers.
+        </dd>
+
+        <dt>How long is face data retained?</dt>
+        <dd>
+          <div class="kvd">
+            <div><em>Ephemeral (processing-only)</em></div><div>Per-frame ARKit inputs (camera/depth/mesh) are processed in memory and discarded immediately.</div>
+            <div><em>Session logs</em></div><div>Derived gaze samples and metrics you choose to save are kept <strong>until you delete them</strong> or uninstall the app.</div>
+          </div>
+        </dd>
+
+        <dt>Where in the privacy policy is collection/use/sharing/retention explained?</dt>
+        <dd>
+          See: <a href="#face-data" >Face Data (TrueDepth/ARKit)</a>, <a href="#data-collection">Data Collection</a>, <a href="#data-use">Data Use</a>, <a href="#storage">Storage &amp; Security</a>, <a href="#data-sharing">Data Sharing</a>, <a href="#retention">Data Retention</a>.
+        </dd>
+
+        <dt>Quote the specific text from the privacy policy concerning face data</dt>
+        <dd>
+          <blockquote id="face-data-quote">
+            “EyeRadar processes ARKit eye-tracking signals (gaze vectors, lookAtPoint, eye transforms, blink openness) on device to provide research features during a session. We do not store camera images, depth maps, or full face meshes. Derived gaze samples and reading metrics are saved only when you choose to store a session and remain on your device unless you export them.”
+          </blockquote>
+        </dd>
+      </div>
     </section>
 
+    <!-- ======= Introduction ======= -->
     <section class="card">
+      <h2>Introduction</h2>
+      <p>EyeRadar is a research utility app that captures eye-tracking–based interaction signals during reading sessions. This policy explains what data we collect, how we use it, and your choices.</p>
+    </section>
+
+    <!-- ======= Data Collection ======= -->
+    <section id="data-collection" class="card">
       <h2>Data Collection</h2>
       <ul>
-        <li><strong>User Information</strong>: Name, grade, ID, email, and date of birth (if entered by you).</li>
-        <li><strong>Reading Sessions</strong>: Eye-tracking data and session logs collected during reading tasks.</li>
-        <li><strong>Authentication</strong>: EyeRadar uses <em>Sign in with Apple</em> for login. Apple may share your name and email if you choose.</li>
+        <li><strong>User Information</strong>: Name, grade, ID, email, and date of birth (only if you enter them).</li>
+        <li><strong>Authentication</strong>: <em>Sign in with Apple</em>. Apple may provide your name and/or relay email depending on your choice.</li>
+        <li><strong>Reading Sessions</strong> (saved only when you choose):
+          <ul>
+            <li>Derived gaze samples (screen coordinates), fixation/saccade metrics, timestamps</li>
+            <li>Optional calibration parameters</li>
+            <li>Local device and app version metadata for troubleshooting (e.g., model, iOS version)</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="small"><span class="pill">We do not collect</span> background location, contacts, advertising identifiers, or analytics tied to your identity.</p>
+    </section>
+
+    <!-- ======= Face Data (TrueDepth/ARKit) ======= -->
+    <section id="face-data" class="card">
+      <h2>Face Data (TrueDepth/ARKit)</h2>
+      <h3>What we process</h3>
+      <p>On iPhones that support face tracking, EyeRadar uses ARKit to access eye-tracking–related signals during active sessions: gaze vectors and <code>lookAtPoint</code>, left/right eye transforms, and blink openness estimates. These signals are <strong>processed on device</strong> to position cursors and compute reading metrics.</p>
+
+      <h3>What we do <em>not</em> store</h3>
+      <ul>
+        <li>No saving of RGB camera frames</li>
+        <li>No saving of depth maps or TrueDepth raw data</li>
+        <li>No saving of full face mesh geometry</li>
+      </ul>
+
+      <h3 id="data-use">How we use these signals</h3>
+      <p>Solely to enable reading-research features (e.g., gaze-controlled navigation, fixation timing) and optional calibration. <strong>Not</strong> used for user identification, authentication, advertising, marketing, or profiling.</p>
+
+      <h3 id="data-sharing">Sharing</h3>
+      <p>We do not share face data with third parties. Derived session logs remain on your device unless you export them via the iOS share sheet that you control.</p>
+
+      <h3 id="storage">Storage &amp; Security</h3>
+      <p>Per-frame ARKit inputs are handled in volatile memory and discarded immediately after processing. If you save a session, only derived gaze samples/metrics and calibration values are written to <strong>local device storage</strong>. We do not operate any non-Apple backend.</p>
+
+      <h3 id="retention">Retention</h3>
+      <p>Ephemeral ARKit inputs are not retained. Saved session logs persist on your device <strong>until you delete them</strong> or uninstall the app.</p>
+
+      <h3>Exact wording (for App Review)</h3>
+      <blockquote>
+        “EyeRadar processes ARKit eye-tracking signals (gaze vectors, lookAtPoint, eye transforms, blink openness) on device to provide research features during a session. We do not store camera images, depth maps, or full face meshes. Derived gaze samples and reading metrics are saved only when you choose to store a session and remain on your device unless you export them. We do not use face data for identification, authentication, advertising, or profiling.”
+      </blockquote>
+    </section>
+
+    <!-- ======= Data Use (non-face) ======= -->
+    <section class="card">
+      <h2>Data Use (General)</h2>
+      <p>We use collected data solely to provide app functionality and conduct reading-related research features that you invoke. We do not sell your data. We do not use your data for targeted advertising.</p>
+    </section>
+
+    <!-- ======= Storage & Export ======= -->
+    <section class="card">
+      <h2>Storage &amp; Export</h2>
+      <p>All session data are stored locally on your device. Export happens only when you choose to share via the iOS share sheet (e.g., Mail, Files, AirDrop). Exported files (e.g., ZIP/CSV) contain only derived session data and optional calibration parameters.</p>
+    </section>
+
+    <!-- ======= Sign in with Apple ======= -->
+    <section class="card">
+      <h2>Sign in with Apple</h2>
+      <p>EyeRadar supports Apple’s authentication flow. Depending on your choice, Apple may share your name and a relay email address. We use this information only to create and maintain your app account and do not share it with third parties.</p>
+    </section>
+
+    <!-- ======= Your Rights ======= -->
+    <section class="card">
+      <h2>Your Choices &amp; Rights</h2>
+      <ul>
+        <li><strong>Save or don’t save</strong>: You decide whether a session is stored.</li>
+        <li><strong>Export</strong>: You choose when and how to share exported files.</li>
+        <li><strong>Delete</strong>: Delete sessions in-app or uninstall the app to remove all locally stored data.</li>
+        <li><strong>Questions</strong>: Contact <a href="mailto:nick8smirn@gmail.com">nick8smirn@gmail.com</a>.</li>
       </ul>
     </section>
 
-    <section class="card">
-      <h2>Data Use</h2>
-      <p>We use collected data solely for research purposes and to provide app functionality. We do not sell or share data with third parties.</p>
-    </section>
-
-    <section class="card">
-      <h2>Storage</h2>
-      <p>All session data is stored locally on your device. Exporting or sharing this data is done only when you choose to share it.</p>
-    </section>
-
-    <section class="card">
-      <h2>Data Sharing</h2>
-      <p>When you use the export feature, reading sessions are packaged into ZIP files and shared through the iOS share sheet. You control when and how your data is shared.</p>
-    </section>
-
-    <section class="card">
-      <h2>Your Rights</h2>
-      <p>You may delete the app at any time, which removes all locally stored data. For questions about your data, contact us at <a href="mailto:nick8smirn@gmail.com">nick8smirn@gmail.com</a>.</p>
-    </section>
-
+    <!-- ======= Changes ======= -->
     <section class="card">
       <h2>Changes</h2>
-      <p>We may update this Privacy Policy from time to time. Updates will be published on this page.</p>
+      <p>We may update this Privacy Policy from time to time. Updates will be published on this page with a revised effective date.</p>
     </section>
+
+    <!-- ======= App Review Cross-Reference Map ======= -->
+    <section class="card">
+      <h2>App Review Cross-Reference</h2>
+      <div class="grid">
+        <div class="card" style="margin:0;">
+          <h3>Questions → Sections</h3>
+          <ul>
+            <li>What face data? → <a href="#face-data">Face Data</a></li>
+            <li>Planned uses? → <a href="#face-data">Face Data</a> &amp; <a href="#data-use">Data Use</a></li>
+            <li>Third-party sharing &amp; storage? → <a href="#face-data">Face Data</a>, <a href="#storage">Storage</a>, <a href="#data-sharing">Data Sharing</a></li>
+            <li>Retention? → <a href="#retention">Retention</a></li>
+            <li>Policy locations? → <a href="#app-review-summary">Summary</a> + all linked sections above</li>
+            <li>Exact quote? → <a href="#face-data-quote">Quoted Text</a></li>
+          </ul>
+        </div>
+        <div class="card" style="margin:0;">
+          <h3>Signals at a Glance</h3>
+          <ul>
+            <li><span class="badge ok">On-device</span> Gaze vectors, <code>lookAtPoint</code>, eye transforms, blink openness</li>
+            <li><span class="badge ok">Not saved</span> Camera frames, depth maps, full face mesh</li>
+            <li><span class="badge warn">Saved if chosen</span> Derived gaze samples, fixation/saccade metrics, calibration params</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
