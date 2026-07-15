@@ -132,7 +132,7 @@ The public pages can be hosted using GitHub Pages.
 
 The current pages are available at:
 
-- [EyeRadar Support](https://nikossmyrnakis.github.io/eyeRadar/)
+- [EyeRadar Support](https://nikossmyrnakis.github.io/eyeRadar/support.html)
 - [Privacy Policy](https://nikossmyrnakis.github.io/eyeRadar/privacy.html)
 
 ## Troubleshooting
